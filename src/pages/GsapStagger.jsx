@@ -7,7 +7,7 @@ const GsapStagger = () => {
   useGSAP(() => {
     gsap.to(".stagger-box", {
       duration: 1,
-      y: 200,
+      y: 100,
       // stagger: 0.5,
       ease: "back.inOut",
       scale: 0.5,

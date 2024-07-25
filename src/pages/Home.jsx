@@ -1,5 +1,8 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
 import "../style.css";
+
 const animations = [
   {
     title: "GSAP To",
@@ -45,16 +48,66 @@ const animations = [
 ];
 
 const Home = () => {
+  useEffect(() => {
+    // Initial animation: fade in and slide up
+    gsap.fromTo(
+      ".heading-text",
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+    );
+
+    // Glitch effect animation
+    gsap.to(".heading-text", {
+      duration: 10,
+      keyframes: [
+        { textContent: "GSAP Animations", duration: 0.1, ease: "none" },
+        { textContent: "GS@P Animations", duration: 0.1, ease: "none" },
+        { textContent: "GS#P Animations", duration: 0.1, ease: "none" },
+        { textContent: "GS$P Animations", duration: 0.1, ease: "none" },
+        { textContent: "Kuldeep Sonara", duration: 0.1, ease: "none" },
+        { textContent: "Kuld33p Sonara", duration: 0.1, ease: "none" },
+        { textContent: "Kuld33p S0nara", duration: 0.1, ease: "none" },
+        { textContent: "Kuldeep S0nara", duration: 0.1, ease: "none" },
+        { textContent: "Kuldeep Sonara", duration: 0.1, ease: "none" },
+        { textContent: "Kuld33p Sonara", duration: 0.1, ease: "none" },
+        { textContent: "GS$P Animations", duration: 0.1, ease: "none" },
+        { textContent: "GS#P Animations", duration: 0.1, ease: "none" },
+        { textContent: "GS@P Animations", duration: 0.1, ease: "none" },
+        { textContent: "GSAP Animations", duration: 0.1, ease: "none" },
+        { textContent: "GS@P Animations", duration: 0.1, ease: "none" },
+        { textContent: "GS#P Animations", duration: 0.1, ease: "none" },
+        { textContent: "GS$P Animations", duration: 0.1, ease: "none" },
+        { textContent: "GS@P Animations", duration: 0.1, ease: "none" },
+        { textContent: "GSAP Animations", duration: 0.1, ease: "none" },
+      ],
+      onComplete: () => {
+        gsap.to(".heading-text", {
+          textContent: "GSAP Animations",
+          duration: 1,
+          ease: "none",
+        });
+      },
+    });
+
+    // GSAP animation for the list items
+    gsap.fromTo(
+      "li",
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.2,
+      }
+    );
+  }, []);
+
   return (
     <main className="container">
       <div className="flex flex-col">
         <h1 className="text-3xl font-bold text-zinc-50">
-          <a
-            href="https://gsap.com/"
-            style={{ color: "white", cursor: "pointer" }}
-          >
-            GSAP Animations
-          </a>
+          <span className="heading-text">GSAP Animations</span>
         </h1>
         <ol className="flex flex-col mt-10">
           {animations.map((animation, index) => (
