@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "../style.css";
 const animations = [
   {
     title: "GSAP To",

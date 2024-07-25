@@ -1,0 +1,16 @@
+/* index.css or App.css */
+
+/* Ensure the HTML and Body elements take up the full viewport and allow scrolling */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto; /* Enables scrolling */
+}
+
+/* Optional: ensure the root container takes up at least the full viewport height */
+#root {
+  min-height: 100vh; /* Ensures it takes at least the full viewport height */
+  box-sizing: border-box; /* Ensures padding is included in height calculation */
+}
