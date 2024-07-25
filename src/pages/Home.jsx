@@ -48,7 +48,14 @@ const Home = () => {
   return (
     <main className="container">
       <div className="flex flex-col">
-        <h1 className="text-3xl font-bold text-zinc-50">GSAP Animations</h1>
+        <h1 className="text-3xl font-bold text-zinc-50">
+          <a
+            href="https://gsap.com/"
+            style={{ color: "white", cursor: "pointer" }}
+          >
+            GSAP Animations
+          </a>
+        </h1>
         <ol className="flex flex-col mt-10">
           {animations.map((animation, index) => (
             <li
